@@ -1,0 +1,35 @@
+{
+    "name": "becklyn/ddd-gdpr-bundle",
+    "description": "GDPR compliance for Becklyn event sourcing",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marko Vujnovic",
+            "email": "mv@becklyn.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "becklyn/ddd-symfony-bridge": "^2.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-mock": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Becklyn\\Ddd\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Becklyn\\Ddd\\Tests\\": "tests/"
+        }
+    }
+}
