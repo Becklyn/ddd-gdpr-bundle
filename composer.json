@@ -11,7 +11,8 @@
     ],
     "require": {
         "php": ">=8.0",
-        "becklyn/ddd-symfony-bridge": "^2.0"
+        "becklyn/ddd-symfony-bridge": "^2.0",
+        "ramsey/uuid": "^4.0"
     },
     "require-dev": {
         "pestphp/pest": "^1.21",
@@ -24,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Becklyn\\Ddd\\": "src/"
+            "Becklyn\\Ddd\\PersonalData\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Becklyn\\Ddd\\Tests\\": "tests/"
+            "Becklyn\\Ddd\\PersonalData\\Tests\\": "tests/"
         }
     }
 }
