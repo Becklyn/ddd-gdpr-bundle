@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                  http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="Becklyn\Ddd\PersonalData\Infrastructure\Domain\Doctrine\DoctrineStoredPersonalDataRecord" table="personal_data_store">
+
+        <id name="id" column="id" type="string" length="36" />
+
+        <field name="aggregateId" column="aggregate_id" type="string" length="36" nullable="false" />
+
+        <field name="personalValue" column="personal_value" type="string" nullable="true" />
+
+        <field name="daysToLive" column="days_to_live" type="integer" nullable="false" />
+
+        <field name="eventRaisedTs" column="event_raised_ts" type="datetime_immutable" nullable="false" />
+
+        <field name="expiresTs" column="expires_ts" type="datetime_immutable" nullable="false" />
+
+        <field name="anonymizedTs" column="anonymized_ts" type="datetime_immutable" nullable="true" />
+
+        <field name="createdTs" column="created_ts" type="datetime_immutable" nullable="false" />
+
+    </entity>
+
+</doctrine-mapping>

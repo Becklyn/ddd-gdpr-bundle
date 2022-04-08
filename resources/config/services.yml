@@ -1,0 +1,30 @@
+services:
+    becklyn_ddd.events.personal_data.personal_data_store:
+        class: Becklyn\Ddd\PersonalData\Infrastructure\Domain\Doctrine\DoctrinePersonalDataStore
+        public: false
+        arguments:
+            - '@Doctrine\ORM\EntityManagerInterface'
+
+    Becklyn\Ddd\PersonalData\Infrastructure\Domain\Doctrine\DoctrinePersonalDataStore:
+        alias: becklyn_ddd.events.personal_data.personal_data_store
+
+    Becklyn\Ddd\PersonalData\Domain\PersonalDataStore:
+        alias: becklyn_ddd.events.personal_data.personal_data_store
+
+    becklyn_ddd.events.personal_data.serializer:
+        class: Becklyn\Ddd\PersonalData\Infrastructure\EventStore\Symfony\SymfonyGdprCompliantEventSerializer
+        public: false
+        arguments:
+            - '@Symfony\Component\Serializer\SerializerInterface'
+            - '@becklyn_ddd.events.personal_data.personal_data_store'
+
+    # inject our own serializer into the event store
+    becklyn_ddd.events.event_store:
+        class: Becklyn\Ddd\Events\Infrastructure\Store\Doctrine\DoctrineEventStore
+        public: false
+        arguments:
+            - '@Doctrine\ORM\EntityManagerInterface'
+            - '@becklyn_ddd.events.aggregate_repository'
+            - '@becklyn_ddd.events.event_type_repository'
+            - '@becklyn_ddd.events.personal_data.serializer'
+            - true
