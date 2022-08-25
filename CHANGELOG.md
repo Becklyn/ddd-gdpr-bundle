@@ -1,3 +1,8 @@
+1.2.1
+=======
+
+* (feature) Added Support for series 4 of becklyn/ddd-core and becklyn/ddd-symfony-bridge
+
 1.2.0
 =======
 
