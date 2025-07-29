@@ -1,3 +1,9 @@
+2.0.0
+=======
+
+* (bc) drop support of `becklyn/ddd-symfony-bridge` 2.0
+* (feature) add support for symfony 7
+
 1.2.1
 =======
 
